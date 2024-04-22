@@ -1,0 +1,45 @@
+<aside class="sidebar">
+  <div class="logo">
+    <!-- <img src=" " alt=" " /> -->
+    <h4>YOURLOGO</h4>
+  </div>
+  <a [routerLink]="['/dashboard']" #dashboardLink (click)="highlightLink('dashboard')">
+  <div class="logo-dashboard" [ngClass]="{'active': activeLink === 'dashboard'}">
+    <span class="bi bi-command"></span>
+    <p>Dashboard</p>
+  </div>
+  </a>
+<a [routerLink]="['/objectives']">
+  <div class="logo-dashboard">
+    <span class="bi bi-bar-chart-fill"></span>
+    <p>Objectives</p>
+  </div>
+</a>
+<a [routerLink]="['/documents']" #documentsLink (click)="highlightLink('documents')">
+  <div class="logo-dashboard" [ngClass]="{'active': activeLink === 'documents'}">
+    <span class="bi bi-file-earmark-text"></span>
+    <p>Documents</p>
+  </div>
+</a>
+
+  <div class="logo-dashboard">
+    <span class="bi bi-image"></span>
+    <p>Photos</p>
+  </div>
+  <div class="logo-dashboard">
+    <span class="bi bi-cash-coin"></span>
+    <p>Hierarchy</p>
+  </div>
+  <div class="logo-dashboard">
+    <span class="bi bi-chat-left-dots"></span>
+    <p>Message</p>
+  </div>
+  <div class="logo-dashboard">
+    <span class="bi bi-question-circle"></span>
+    <p>Help</p>
+  </div>
+  <div class="logo-dashboard">
+    <span class="bi bi-gear"></span>
+    <p>Setting</p>
+  </div>
+</aside>
