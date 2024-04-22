@@ -1,0 +1,35 @@
+<div class="navbar">
+  <div class="dynamic-user">
+    <h4>Hello, {{ users?.data?.[0]?.firstName }}</h4>
+    <p>Have a nice day</p>
+  </div>
+  <div class="profile">
+    <div class="notification">
+      <span class="bi bi-bell-fill"></span>
+    </div>
+    <img src=" " alt=" " />
+    <div class="user-profile">
+      <div class="dropdown-user">
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="display: flex; align-items: center;"
+          >
+            <div style="margin-right: 5px;">
+              <h6>{{ users?.data?.[0]?.firstName }} {{ users?.data?.[0]?.lastName }}</h6>
+              <p>{{ users?.data?.[0]?.role ?.roleName}}</p>
+            </div>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
