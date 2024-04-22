@@ -1,0 +1,309 @@
+<button
+  type="button"
+  class="btn btn-hover-primary"
+  [attr.data-bs-toggle]="'modal'"
+  [attr.data-bs-target]="'#editUser' + user?.id"
+>
+  <span class="bi bi-pen"></span>
+</button>
+<ng-container *ngIf="user; else notFound">
+  <div
+    class="modal fade"
+    [id]="'editUser' + user.id"
+    tabindex="-1"
+    aria-labelledby="editUserLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserLabel">Edit User</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" style="max-width: none">
+          <form #userFrom="ngForm" id="userForm" (ngSubmit)="onFormSubmit()">
+            <!-- (ngSubmit)="onFormSubmit()" -->
+            <div class="mb-3">
+              <!-- <label for="userId" class="form-label">Id</label> -->
+              <input
+                class="form-control"
+                type="text"
+                placeholder="User ID *"
+                aria-label="Id"
+                disabled
+                id="userId {{ user.id }}"
+                name="userId"
+                [(ngModel)]="user.id"
+              />
+              <!-- value="{{ user?.id }}" -->
+              <!-- [(ngModel)]="model.id" -->
+            </div>
+
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                <div class="mb-3">
+                  <!-- <label for="firstName" class="form-label">First Name</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="First Name *"
+                    aria-label="First Name"
+                    id="userFirstName {{ user.id }}"
+                    name="userFirstName"
+                    [(ngModel)]="updateUserRequest.firstName"
+                  />
+                  <!-- value="{{user?.firstName}}" -->
+                  <!-- [(ngModel)]="user?.firstName" -->
+
+                  <!-- [value]="user?.data[0]?.firstName" -->
+                  <!-- [(ngModel)]="model.firstName" -->
+                </div>
+              </div>
+              <div class="col-4 col-sm-6">
+                <div class="mb-3">
+                  <!-- <label for="lastName" class="form-label">Last Name</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Last Name *"
+                    aria-label="Last Name"
+                    id="userLastName {{ user.id }}"
+                    name="userLastName"
+                    [(ngModel)]="updateUserRequest.lastName"
+                  />
+                  <!-- value="{{user?.lastName}}" -->
+                  <!-- [(ngModel)]="model.lastName" -->
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="firstName" class="form-label">First Name</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Email ID *"
+                    aria-label="Email ID"
+                    id="userEmail {{ user.id }}"
+                    name="userEmail"
+                    [(ngModel)]="updateUserRequest.email"
+                  />
+                  <!-- value="{{user?.email}}" -->
+                  <!-- [(ngModel)]="model.email" -->
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="lastName" class="form-label">Last Name</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Mobile No"
+                    aria-label="Mobile No"
+                    id="userMobile {{ user.id }}"
+                    name="userMobile"
+                    [(ngModel)]="updateUserRequest.phone"
+                  />
+                  <!-- value="{{user?.phone}}" -->
+                  <!-- [(ngModel)]="model.phone" -->
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="lastName" class="form-label">Role</label> -->
+                  <select
+                    class="form-select"
+                    id="userRoleId {{ user.id }}"
+                    name="userRoleId"
+                    aria-label="roleId"
+                    [(ngModel)]="updateUserRequest.roleId"
+                  >
+                    <!-- value="{{user?.role?.roleId}}" -->
+                    <!-- [(ngModel)]="model.roleId" -->
+                    <option value="" selected disabled hidden>Role *</option>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                    <option value="3">Moderator</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="firstName" class="form-label">Username</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Username *"
+                    aria-label="Username"
+                    id="userUserName {{ user.id }}"
+                    name="userUserName"
+                    [(ngModel)]="updateUserRequest.username"
+                  />
+                  <!-- value="{{user?.username}}" -->
+                  <!-- [(ngModel)]="model.userName" -->
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="lastName" class="form-label">Password</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Password *"
+                    aria-label="Password"
+                    id="userPasseord {{ user.id }}"
+                    name="userPassword"
+                    [(ngModel)]="updateUserRequest.password"
+                  />
+                  <!-- [(ngModel)]="updateUserRequest.password" -->
+                  <!-- [(ngModel)]="model.password" -->
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="mb-3">
+                  <!-- <label for="lastName" class="form-label">Confirm Password</label> -->
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Confirm Password *"
+                    aria-label="Confirm Password"
+                    id="userConfirmPassword {{ user.id }}"
+                    name="userConfirmPassword"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="lable-permission">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Module Permission</th>
+                    <th></th>
+                    <th>Read</th>
+                    <th>Write</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+ <!-- <tr *ngFor="let permission of userPermissions; let i = index">
+  <td>{{ permission.permissionName }}</td>
+  <td></td>
+  <td>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [id]="'userReadPermission_' + i"
+        name="userReadPermission"
+        [checked]="permission.isReadable"
+        (change)="onPermissionChange(i, 'read', $event)"
+      />
+    </div>
+  </td>
+  <td>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [id]="'userWritePermission_' + i"
+        name="userWritePermission"
+        [checked]="permission.isWritable"
+        (change)="onPermissionChange(i, 'write', $event)"
+      />
+    </div>
+  </td>
+  <td>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [id]="'userDeletePermission_' + i"
+        name="userDeletePermission"
+        [checked]="permission.isDeletable"
+        (change)="onPermissionChange(i, 'delete', $event)"
+      />
+    </div>
+  </td>
+</tr> -->
+
+<tr *ngFor="let permission of this.updateUserRequest.userPermissions;let i = index">
+    <td>{{ userPermissions[i].permissionName }}</td>
+    <td></td>
+    <td>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [id]="'userReadPermission_' + i"
+          name="userReadPermission"
+          [ngModel]="permission.isReadable"
+          (ngModelChange)="permission.isReadable = $event"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [id]="'userWritePermission_' + i"
+          name="userWritePermission"
+          [ngModel]="permission.isWritable"
+          (ngModelChange)="permission.isReadable = $event"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [id]="'userDeletePermission_' + i"
+          name="userDeletePermission"
+          [ngModel]="permission.isDeletable"
+          (ngModelChange)="permission.isReadable = $event"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </td>
+</tr>
+
+</tbody>
+
+              </table>
+            </div>
+
+            <!-- Inside your form -->
+            <div class="modal-footer">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Save
+              </button>
+              <button type="button" class="btn" data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #notFound>
+  <div class="alert alert-warning" role="alert">User not found!</div>
+</ng-template>

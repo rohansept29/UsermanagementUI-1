@@ -1,0 +1,124 @@
+.lable-permission table {
+  width: 100%;
+  border-collapse: collapse;
+  /* border: 1px solid #ccc; */
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+/* .lable-permission{
+  margin: 0;
+  background-color: #eff4fa;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+} */
+
+.lable-permission th {
+  color: #8f9bb3;
+  background-color: #eff4fa;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Styling for table data cells */
+.lable-permission td {
+  /* margin: 0; */
+  padding: 30px;
+  border-top: 1px solid #ccc;
+  max-width: 100px;
+}
+
+.panel-list {
+  /* border-top: 1px solid #ccc; */
+  /* border: 1px solid #ccc; */
+  background-color: #ffffff;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-radius: 8px;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.header-list h5 {
+  margin: 0;
+}
+
+/* Styling for the user list container */
+.user-list {
+  margin-top: 20px;
+}
+
+/* Styling for the table */
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+  /* border: 1px solid #ccc; */
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+/* Styling for table headers */
+.user-list th {
+  color: #8f9bb3;
+  background-color: #eff4fa;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Styling for table data cells */
+.user-list td {
+  /* margin: 0; */
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  max-width: 100px;
+}
+
+
+.user-table{
+  margin: 0;
+  margin-left: 20px;
+}
+
+.user-table p{
+  margin: 0;
+  color: #7f7e7e;
+  font-weight: lighter;
+}
+
+.user-table h5{
+  margin: 0;
+}
+
+
+.employee {
+  width: 110px;
+  margin: 0;
+  color: #fff;
+  background-color: #0095FF;
+  padding: 2px;
+  border-radius: 5px;
+  /* padding: 5px 10px; */
+  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+
+}
+
+.btn-hover-primary:hover {
+    /* background-color: #dc3545; */
+    /* border-color: #dc3545; */
+    color: #0095FF;
+}
+
+.form-check-input:checked {
+  background-color: #0095FF; /* Change background color when checked */
+  border-color: #0095FF; /* Change border color when checked */
+}
