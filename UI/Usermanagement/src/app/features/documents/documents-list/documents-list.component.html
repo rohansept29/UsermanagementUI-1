@@ -1,0 +1,159 @@
+<h3 style="color: #4a85f6">Documents</h3>
+<div class="sort-user">
+  <div class="input-group">
+    <span class="input-group-text"><i class="bi bi-search"></i></span>
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search documents"
+      aria-label="Search"
+    />
+  </div>
+  <!-- <button class="btn btn-primary" type="button">Adduser+</button> -->
+  <div class="dropdown">
+    <button
+      class="btn dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Sort by
+    </button>
+    <ul class="dropdown-menu dropdown-menu-lg-end">
+      <li>
+        <button class="dropdown-item" type="button">Name</button>
+      </li>
+      <li>
+        <button class="dropdown-item" type="button">Create Date</button>
+      </li>
+      <li>
+        <button class="dropdown-item" type="button">Role</button>
+      </li>
+    </ul>
+  </div>
+  <span class="bi bi-sliders"></span>
+</div>
+<div class="doc-manage">
+  <div class="icon-doc">
+    <button class="btn btn-outline-primary">
+      <i class="bi bi-pc-display"></i>
+    </button>
+    <button class="btn btn-outline-primary">
+      <i class="bi bi-arrows-fullscreen"></i>
+    </button>
+    <button class="btn btn-outline-primary">
+      <i class="bi bi-journal-text"></i>
+    </button>
+    <button class="btn btn-outline-primary">
+      <i class="bi bi-printer"></i>
+    </button>
+    <button class="btn btn-outline-primary">
+      <i class="bi bi-trash3-fill"></i>
+    </button>
+  </div>
+  <div class="doc-sort">
+    <div class="dropdown">
+      <button
+        class="btn dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        This Month
+      </button>
+      <ul class="dropdown-menu dropdown-menu-lg-end">
+        <li>
+          <!-- <button class="dropdown-item" type="button">Name</button> -->
+        </li>
+        <li>
+          <!-- <button class="dropdown-item" type="button">
+                            Create Date
+                        </button> -->
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Documents
+      </button>
+      <ul class="dropdown-menu dropdown-menu-lg-end">
+        <li>
+          <!-- <button class="dropdown-item" type="button">Name</button> -->
+        </li>
+        <li>
+          <!-- <button class="dropdown-item" type="button">
+                            Create Date
+                        </button> -->
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary">
+      <i class="bi bi-plus-lg"></i>
+    </button>
+  </div>
+</div>
+<div class="panel-list">
+  <h5 style="margin-left: 10px">List of documents</h5>
+  <!-- <div class="header-list">
+              <h6>Name</h6>
+              <h6>Create Date</h6>
+              <h6>Role</h6>
+              <h6>Action</h6>
+            </div> -->
+  <div class="user-list">
+    <table>
+      <!-- <thead>
+        <tr>
+          <th>.</th>
+          <th>.</th>
+          <th>.</th>
+          <th>.</th>
+          <th>.</th>
+        </tr>
+      </thead> -->
+      <tbody>
+        <tr *ngFor="let row of rowsData">
+          <td>
+            <div class="doc-list">
+              <button class="btn btn-outline-primary">
+                <i class="bi bi-file-earmark-text"></i>
+              </button>
+              <!-- <span class="bi bi-file-earmark-text"></span> -->
+              <div class="doc-label">
+                <p>{{ row.label }}</p>
+                <label>{{ row.date }}</label>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="doc-text">
+              {{ row.text }}
+            </div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div class="action-btn">
+              <button class="btn btn-outline-primary">
+                <i class="bi bi-pen"></i>
+              </button>
+              <button class="btn btn-outline-danger ms-3">
+                <i class="bi bi-trash3"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
